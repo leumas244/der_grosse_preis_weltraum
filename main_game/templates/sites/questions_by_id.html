@@ -1,0 +1,615 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>{{ question.topic.name }} {{ question.question_points }}</title>
+{% endblock %}
+
+
+{% block main %}
+<div class="container-fluid">
+    <div class="p-1">
+        <a class="px-5 mx-5" style="text-decoration: none;" href=""
+           onclick="show('divQuestion'); return false">&#160</a>
+    </div>
+</div>
+
+{% load static %}
+<h1 class="jungle-topic"
+    style="background:url('{% static 'base/images/HolzSchild_mit_Ranken.png' %}'); background-position: bottom; background-size: 350px; background-repeat: no-repeat;">
+    {{ question.question_category }}</h1>
+{% if question.id == 1 %}
+<div class="mt-5" style="display: none" id="divQuestion">
+    <h2>{{ question.name }}</h2>
+    <div class="row justify-content-md-center my-3">
+        <div class="col col-sm-4">
+            <div class="card bg-transparent text-center py-2">
+                <div class="car-body justify-content-md-center">
+                    <h4>
+                        <a style="text-decoration: none; color: white" href=""
+                           onclick="show('divGuerteltier'); return false"><strong>A</strong> Gürteltier</a>
+                    </h4>
+                    <img class="answer-picture" src="{% static 'base/images/guerteltier.jpg' %}" id="divGuerteltier">
+                </div>
+            </div>
+        </div>
+        <div class="col col-sm-4">
+            <div class="card bg-transparent text-center py-2">
+                <div class="car-body">
+                    <h4>
+                        <a style="text-decoration: none; color: white" href=""
+                           onclick="show('divNilflughund'); return false"><strong>B</strong> Nilflughund</a>
+                    </h4>
+                    <img class="answer-picture" src="{% static 'base/images/nilflughund.jpg' %}" id="divNilflughund">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-md-center my-3">
+        <div class="col col-sm-4">
+            <div class="card bg-transparent text-center py-2">
+                <div class="car-body">
+                    <h4>
+                        <a style="text-decoration: none; color: white" href=""
+                           onclick="show('divGlasfrosch'); return false"><strong>C</strong> Glasfrosch</a>
+                    </h4>
+                    <img class="answer-picture" src="{% static 'base/images/glasfrosch.jpg' %}" id="divGlasfrosch">
+                </div>
+            </div>
+        </div>
+        <div class="col col-sm-4">
+            <div class="card bg-transparent text-center py-2" id="rightCard">
+                <div class="car-body">
+                    <h4>
+                        <a style="text-decoration: none; color: white" href=""
+                           onclick="change_true('rightCard'); return false"><strong>D</strong> Rotmaulpapagai</a>
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% elif question.id == 5 %}
+<div class="mt-5" style="display: none" id="divQuestion">
+    <h2>{{ question.name }}</h2>
+    <audio id="audio_with_controls" controls src="{% static 'base/audio/Krokodil_Geraeusche.mp3' %}" type="audio/mp3">
+        hr Browser kann dieses Tondokument nicht wiedergeben.
+    </audio>
+    <div class="row justify-content-md-center my-3">
+        <div class="col col-sm-4">
+            <div class="card bg-transparent text-center py-2" id="cardBaer">
+                <div class="car-body justify-content-md-center">
+                    <h4>
+                        <a style="text-decoration: none; color: white" href=""
+                           onclick="change_false('cardBaer'); return false; "><strong>A</strong> Bär</a>
+                    </h4>
+                </div>
+            </div>
+        </div>
+        <div class="col col-sm-4">
+            <div class="card bg-transparent text-center py-2" id="cardKroko">
+                <div class="car-body">
+                    <h4>
+                        <a style="text-decoration: none; color: white" href=""
+                           onclick="change_true('cardKroko'); return false"><strong>B</strong> Krokodil</a>
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-md-center my-3">
+        <div class="col col-sm-4">
+            <div class="card bg-transparent text-center py-2" id="cardLion">
+                <div class="car-body">
+                    <h4>
+                        <a style="text-decoration: none; color: white" href=""
+                           onclick="change_false('cardLion'); return false"><strong>C</strong> Löwe</a>
+                    </h4>
+                </div>
+            </div>
+        </div>
+        <div class="col col-sm-4">
+            <div class="card bg-transparent text-center py-2" id="cardTiger">
+                <div class="car-body">
+                    <h4>
+                        <a style="text-decoration: none; color: white" href=""
+                           onclick="change_false('cardTiger'); return false"><strong>D</strong> Tiger</a>
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% elif question.id == 7 %}
+<div class="mt-5" style="display: none" id="divQuestion">
+    <h2>{{ question.name }}</h2>
+    <div class="row justify-content-md-center my-3">
+        <div class="col col-sm-4">
+            <div class="card bg-transparent text-center py-2" id="cardersteZahl">
+                <div class="car-body justify-content-md-center">
+                    <h4>
+                        <a style="text-decoration: none; color: white" href=""
+                           onclick="change_false('cardersteZahl'); return false; "><strong>A</strong> 44</a>
+                    </h4>
+                </div>
+            </div>
+        </div>
+        <div class="col col-sm-4">
+            <div class="card bg-transparent text-center py-2" id="cardzweiteZahl">
+                <div class="car-body">
+                    <h4>
+                        <a style="text-decoration: none; color: white" href=""
+                           onclick="change_false('cardzweiteZahl'); return false"><strong>B</strong> 55</a>
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-md-center my-3">
+        <div class="col col-sm-4">
+            <div class="card bg-transparent text-center py-2" id="carddritteZahl">
+                <div class="car-body">
+                    <h4>
+                        <a style="text-decoration: none; color: white" href=""
+                           onclick="change_true('carddritteZahl'); return false"><strong>C</strong> 66</a>
+                    </h4>
+                </div>
+            </div>
+        </div>
+        <div class="col col-sm-4">
+            <div class="card bg-transparent text-center py-2" id="cardvierteZahl">
+                <div class="car-body">
+                    <h4>
+                        <a style="text-decoration: none; color: white" href=""
+                           onclick="change_false('cardvierteZahl'); return false"><strong>D</strong> 77</a>
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% elif question.id == 9 %}
+<div class="mt-5" style="display: none" id="divQuestion">
+    <h2>{{ question.name }}</h2>
+    <div class="row justify-content-md-center my-3">
+        {% for team in teams %}
+        <div class="col">
+            <div class="card bg-transparent text-center py-2">
+                <div class="card-head justify-content-md-center">
+                    <span class="dot" style="background-color: {{ team.color }};"></span>
+                    <h4>{{ team.name }}</h4>
+                </div>
+                <div class="car-body justify-content-md-center">
+                    <h1 id="counter{{ team.id }}">0</h1>
+                    <button class="btn btn-outline-danger"
+                            onclick="javascipt:countminus('counter{{ team.id }}'); return false;">-
+                    </button>
+                    <button class="btn btn-outline-success"
+                            onclick="javascipt:countplus('counter{{ team.id }}'); return false;">+
+                    </button>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% elif question.id == 11 %}
+<div class="mt-5" style="display: none" id="divQuestion">
+    <h2>{{ question.name }}</h2>
+    <div class="row justify-content-md-center my-3">
+        <div class="col col-sm-4">
+            <div class="card bg-transparent text-center py-2" id="cardAlbanien">
+                <div class="car-body justify-content-md-center">
+                    <h4>
+                        <a style="text-decoration: none; color: white" href=""
+                           onclick="javascipt:show('imgAlbanien'); return false;"><strong>A</strong> Albanien</a>
+                    </h4>
+                    <img class="answer-picture" src="{% static 'base/images/flags/albanien.png' %}" id="imgAlbanien">
+                </div>
+            </div>
+        </div>
+        <div class="col col-sm-4">
+            <div class="card bg-transparent text-center py-2" id="cardBelgien">
+                <div class="car-body">
+                    <h4>
+                        <a style="text-decoration: none; color: white" href=""
+                           onclick="change_true('cardBelgien'); show('imgBelgien'); return false"><strong>B</strong>
+                            Belgien</a>
+                    </h4>
+                    <img class="answer-picture" src="{% static 'base/images/flags/belgien.png' %}" id="imgBelgien">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-md-center my-3">
+        <div class="col col-sm-4">
+            <div class="card bg-transparent text-center py-2" id="cardCosta">
+                <div class="car-body">
+                    <h4>
+                        <a style="text-decoration: none; color: white" href=""
+                           onclick="show('imgCosta'); return false"><strong>C</strong> Costa Rica</a>
+                    </h4>
+                    <img class="answer-picture" src="{% static 'base/images/flags/costa_rica.png' %}" id="imgCosta">
+                </div>
+            </div>
+        </div>
+        <div class="col col-sm-4">
+            <div class="card bg-transparent text-center py-2" id="cardDan">
+                <div class="car-body">
+                    <h4>
+                        <a style="text-decoration: none; color: white" href=""
+                           onclick="show('imgDan'); return false"><strong>D</strong> Dänemark</a>
+                    </h4>
+                    <img class="answer-picture" src="{% static 'base/images/flags/daenemark.png' %}" id="imgDan">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% elif question.id == 13 %}
+<div class="mt-5" style="display: none" id="divQuestion">
+    <h2>{{ question.name }}</h2>
+    <div class="row justify-content-md-center my-3">
+        {% for team in teams %}
+        <div class="col">
+            <div class="card bg-transparent text-center py-2">
+                <div class="card-head justify-content-md-center">
+                    <span class="dot" style="background-color: {{ team.color }};"></span>
+                    <h4>{{ team.name }}</h4>
+                </div>
+                <div class="car-body justify-content-md-center">
+                    <h1 id="counter{{ team.id }}">0</h1>
+                    <button class="btn btn-outline-danger" onclick="countminus('counter{{ team.id }}'); return false;">
+                        -
+                    </button>
+                    <button class="btn btn-outline-success" onclick="countplus('counter{{ team.id }}'); return false;">
+                        +
+                    </button>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% elif question.id == 14 %}
+<div class="mt-5" style="display: none" id="divQuestion">
+    <h2>{{ question.name }}</h2>
+    <div class="row justify-content-md-center my-3">
+        <div class="col col-sm-4">
+            <div class="card bg-transparent text-center py-2" id="cardFalse1">
+                <div class="car-body justify-content-md-center">
+                    <h4>
+                        <a style="text-decoration: none; color: white" href=""
+                           onclick="javascipt:change_false('cardFalse1'); return false;"><strong>A</strong> 5000
+                            Erdbeeren</a>
+                    </h4>
+                </div>
+            </div>
+        </div>
+        <div class="col col-sm-4">
+            <div class="card bg-transparent text-center py-2" id="cardTrue">
+                <div class="car-body">
+                    <h4>
+                        <a style="text-decoration: none; color: white" href=""
+                           onclick="change_true('cardTrue'); return false"><strong>B</strong> 2500
+                            Menschen</a>
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-md-center my-3">
+        <div class="col col-sm-4">
+            <div class="card bg-transparent text-center py-2" id="cardFalse2">
+                <div class="car-body">
+                    <h4>
+                        <a style="text-decoration: none; color: white" href=""
+                           onclick="change_false('cardFalse2'); return false"><strong>C</strong> 20 Elefanten</a>
+                    </h4>
+                </div>
+            </div>
+        </div>
+        <div class="col col-sm-4">
+            <div class="card bg-transparent text-center py-2" id="cardFalse3">
+                <div class="car-body">
+                    <h4>
+                        <a style="text-decoration: none; color: white" href=""
+                           onclick="change_false('cardFalse3'); return false"><strong>D</strong> 1 Kleinwagen</a>
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% elif question.id == 15 %}
+<div class="mt-5" style="display: none" id="divQuestion">
+    <h2>{{ question.name }}</h2>
+    <div class="row justify-content-md-center my-3">
+        {% for team in teams %}
+        <div class="col">
+            <div class="card bg-transparent text-center py-2">
+                <div class="card-head justify-content-md-center">
+                    <span class="dot" style="background-color: {{ team.color }};"></span>
+                    <h4>{{ team.name }}</h4>
+                </div>
+                <div class="car-body justify-content-md-center">
+                    <h1 id="counter{{ team.id }}">0</h1>
+                    <button class="btn btn-outline-danger"
+                            onclick="javascipt:countminus('counter{{ team.id }}'); return false;">-
+                    </button>
+                    <button class="btn btn-outline-success"
+                            onclick="javascipt:countplus('counter{{ team.id }}'); return false;">+
+                    </button>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% elif question.id == 16 %}
+<div class="mt-5" style="display: none" id="divQuestion">
+    <h2>{{ question.name }}</h2>
+    <div class="row justify-content-md-center my-3">
+        <div class="col col-sm-4">
+            <div class="card bg-transparent text-center py-2" id="cardFalse1">
+                <div class="car-body justify-content-md-center">
+                    <h4>
+                        <a style="text-decoration: none; color: white" href=""
+                           onclick="javascipt:change_false('cardFalse1'); return false;"><strong>A</strong> Tanzen</a>
+                    </h4>
+                </div>
+            </div>
+        </div>
+        <div class="col col-sm-4">
+            <div class="card bg-transparent text-center py-2" id="cardFalse2">
+                <div class="car-body">
+                    <h4>
+                        <a style="text-decoration: none; color: white" href=""
+                           onclick="change_false('cardFalse2'); return false"><strong>B</strong> Reisen</a>
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-md-center my-3">
+        <div class="col col-sm-4">
+            <div class="card bg-transparent text-center py-2" id="cardTrue">
+                <div class="car-body">
+                    <h4>
+                        <a style="text-decoration: none; color: white" href=""
+                           onclick="change_true('cardTrue'); return false"><strong>C</strong> Computer
+                            spielen</a>
+                    </h4>
+                </div>
+            </div>
+        </div>
+        <div class="col col-sm-4">
+            <div class="card bg-transparent text-center py-2" id="cardFalse3">
+                <div class="car-body">
+                    <h4>
+                        <a style="text-decoration: none; color: white" href=""
+                           onclick="change_false('cardFalse3'); return false"><strong>D</strong>
+                            Spazieren</a>
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% elif question.id == 18 %}
+<div class="mt-5" style="display: none" id="divQuestion">
+    <h2>{{ question.name }}</h2>
+    <div class="row justify-content-md-center my-3">
+        <div class="col col-sm-4">
+            <div class="card bg-transparent text-center py-2" id="cardFalse1">
+                <div class="car-body justify-content-md-center">
+                    <h4>
+                        <a style="text-decoration: none; color: white" href=""
+                           onclick="javascipt:change_false('cardFalse1'); return false;"><strong>A</strong> Medizin</a>
+                    </h4>
+                </div>
+            </div>
+        </div>
+        <div class="col col-sm-4">
+            <div class="card bg-transparent text-center py-2" id="cardFalse2">
+                <div class="car-body">
+                    <h4>
+                        <a style="text-decoration: none; color: white" href=""
+                           onclick="change_false('cardFalse2'); return false"><strong>B</strong> Physik</a>
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-md-center my-3">
+        <div class="col col-sm-4">
+            <div class="card bg-transparent text-center py-2" id="cardFalse3">
+                <div class="car-body">
+                    <h4>
+                        <a style="text-decoration: none; color: white" href=""
+                           onclick="change_false('cardFalse3'); return false"><strong>C</strong> BWL</a>
+                    </h4>
+                </div>
+            </div>
+        </div>
+        <div class="col col-sm-4">
+            <div class="card bg-transparent text-center py-2" id="cardTrue">
+                <div class="car-body">
+                    <h4>
+                        <a style="text-decoration: none; color: white" href=""
+                           onclick="change_true('cardTrue'); return false"><strong>D</strong>
+                            Informationstechnik</a>
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% elif question.id == 21 %}
+<div class="mt-5" style="display: none" id="divQuestion">
+    <h2>{{ question.name }}</h2>
+    <div class="row justify-content-md-center my-3">
+        <div class="col col-sm-4">
+            <div class="card bg-transparent text-center py-2" id="cardFalse1">
+                <div class="car-body justify-content-md-center">
+                    <h4>
+                        <a style="text-decoration: none; color: white" href=""
+                           onclick="javascipt:change_false('cardFalse1'); return false;"><strong>A</strong> 20g</a>
+                    </h4>
+                </div>
+            </div>
+        </div>
+        <div class="col col-sm-4">
+            <div class="card bg-transparent text-center py-2" id="cardFalse2">
+                <div class="car-body">
+                    <h4>
+                        <a style="text-decoration: none; color: white" href=""
+                           onclick="change_false('cardFalse2'); return false"><strong>B</strong> 35g</a>
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-md-center my-3">
+        <div class="col col-sm-4">
+            <div class="card bg-transparent text-center py-2" id="cardTrue">
+                <div class="car-body">
+                    <h4>
+                        <a style="text-decoration: none; color: white" href=""
+                           onclick="change_true('cardTrue'); return false"><strong>C</strong> 60g</a>
+                    </h4>
+                </div>
+            </div>
+        </div>
+        <div class="col col-sm-4">
+            <div class="card bg-transparent text-center py-2" id="cardFalse3">
+                <div class="car-body">
+                    <h4>
+                        <a style="text-decoration: none; color: white" href=""
+                           onclick="change_false('cardFalse3'); return false"><strong>D</strong> 95g</a>
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% elif question.id == 22 %}
+<div class="mt-5" style="display: none" id="divQuestion">
+    <h2>{{ question.name }}</h2>
+    <div class="row justify-content-md-center my-3">
+        <div class="col col-sm-4">
+            <div class="card bg-transparent text-center py-2" id="cardFalse1">
+                <div class="car-body justify-content-md-center">
+                    <h4>
+                        <a style="text-decoration: none; color: white" href=""
+                           onclick="javascipt:change_false('cardFalse1'); return false;"><strong>A</strong> 1</a>
+                    </h4>
+                </div>
+            </div>
+        </div>
+        <div class="col col-sm-4">
+            <div class="card bg-transparent text-center py-2" id="cardFalse2">
+                <div class="car-body">
+                    <h4>
+                        <a style="text-decoration: none; color: white" href=""
+                           onclick="change_false('cardFalse2'); return false"><strong>B</strong> 5</a>
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-md-center my-3">
+        <div class="col col-sm-4">
+            <div class="card bg-transparent text-center py-2" id="cardFalse3">
+                <div class="car-body">
+                    <h4>
+                        <a style="text-decoration: none; color: white" href=""
+                           onclick="change_false('cardFalse3'); return false"><strong>C</strong> 10</a>
+                    </h4>
+                </div>
+            </div>
+        </div>
+        <div class="col col-sm-4">
+            <div class="card bg-transparent text-center py-2" id="cardTrue">
+                <div class="car-body">
+                    <h4>
+                        <a style="text-decoration: none; color: white" href=""
+                           onclick="change_true('cardTrue'); return false"><strong>D</strong> 20</a>
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% else %}
+<div class="mt-5" style="display: none" id="divQuestion">
+    <h2>{{ question.name }}</h2>
+    <a class="px-5 mx-5" style="text-decoration: none;" href="" onclick="show('divSolution'); return false">&#160</a>
+</div>
+{% if question.solution != '' %}
+<div class="mt-5" style="display: none" id="divSolution"><h2><strong>{{ question.solution }}</strong></h2></div>
+{% else %}
+<div style="display: none" id="divSolution"><h2>{{ question.solution }}</h2></div>
+{% endif %}
+{% endif %}
+<footer class="text-center text-lg-start fixed-bottom">
+    <div class="container-fluid">
+        <div class="text-center p-3">
+            <form method="POST">
+                {% csrf_token %}
+                <a class="btn btn-secondary" href="{% url 'home' %}">Zurück</a>
+                {% for team in teams %}
+                <button type="submit" name="{{ team.id }}" value="{{ id_number }}" class="btn"
+                        style="background-color: {{ team.color }}">Punkte für {{ team.name }}
+                </button>
+                {% endfor %}
+                <button type="submit" name="0" value="{{ id_number }}" class="btn btn-secondary">
+                    Punkte für keinen
+                </button>
+            </form>
+        </div>
+    </div>
+</footer>
+
+<script>
+    function countplus(id) {
+        if (document.getElementById) {
+            let counterHTML = document.getElementById(id);
+            let count = parseInt(document.getElementById(id).innerHTML);
+            count += 1;
+            counterHTML.innerHTML = count;
+        }
+    }
+
+    function countminus(id) {
+        if (document.getElementById) {
+            let counterHTML = document.getElementById(id);
+            let count = parseInt(document.getElementById(id).innerHTML);
+            count -= 1;
+            counterHTML.innerHTML = count;
+        }
+    }
+
+    function show(id) {
+        if (document.getElementById) {
+            var mydiv = document.getElementById(id);
+            mydiv.style.display = (mydiv.style.display == 'block' ? 'none' : 'block');
+        }
+    }
+
+    function change_true(id) {
+        if (document.getElementById) {
+            var mydiv = document.getElementById(id);
+            mydiv.classList.toggle("bg-transparent");
+            mydiv.classList.toggle("bg-success");
+        }
+    }
+
+    function change_false(id) {
+        if (document.getElementById) {
+            var mydiv = document.getElementById(id);
+            mydiv.classList.toggle("bg-transparent");
+            mydiv.classList.toggle("bg-danger");
+        }
+    }
+</script>
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Der große Preis</title>
+{% endblock %}
+
+
+{% block main %}
+<div class="table-responsive-lg">
+    <table class="table table-borderless text-light align-middle text-center">
+        <thead>
+        <tr>
+            {% for topic in topics %}
+            <th><h3 class="m-3">{{ topic.name }}</h3></th>
+            {% endfor %}
+        </tr>
+        </thead>
+        <tbody>
+        {% load static %}
+        {% for single_row_list in row_list %}
+        <tr>
+            {% for entry in single_row_list %}
+            {% if entry.id %}
+            {% if entry.state %}
+            <td>
+                <a class="jungle-button" href="{% url 'question_by_id' entry.id %}"
+                   style="background:url('{% static 'base/images/HolzSchild_mit_Ranken.png' %}'); background-position: bottom; background-size:150px; background-repeat: no-repeat; text-align: center;">
+                    {{ entry.question_points }}</a>
+            </td>
+            {% else %}
+            <td>
+                <a class="jungle-button-disabled" href=""
+                   style="background:url('{% static 'base/images/HolzSchild_mit_Ranken.png' %}'); background-position: bottom; background-size:150px; background-repeat: no-repeat; text-align: center;"
+                   disabled="true">
+                    {{ entry.question_points }}</a>
+            </td>
+            {% endif %}
+            {% else %}
+            <td>
+                <button type="button" class="btn btn-secondary btn-lg px-5 m-3" disabled>keine Frage</button>
+            </td>
+            {% endif %}
+            {% endfor %}
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

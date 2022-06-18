@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Setup</title>
+{% endblock %}
+
+
+{% block main %}
+<form method="POST">
+    {% csrf_token %}
+    <button type="submit" name="reset" class="btn btn-danger">Reset</button>
+    {% for log in logs %}
+    <h1>{{ log.affected_team}} {{ log.affected_question}} {{ log.action }}</h1>
+    {% endfor %}
+</form>
+{% endblock %}

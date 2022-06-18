@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-block" style="z-index: 2000;">
+    <div class="container-fluid">
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav mx-auto">
+                {% for team in teams %}
+                <li class="nav-item active">
+                    {% if team.is_active %}
+                    <div class="card bg-transparent text-center border-light px-2 mx-5">
+                        <div class="car-body">
+                            <a class="nav-link">
+                                <span class="dot" style="background-color: {{ team.color }};"></span>
+                                <h4 class="text-light">{{ team.name }}</h4>
+                                <h4 class="text-light">{{ team.point_status }}</h4>
+                            </a>
+                        </div>
+                    </div>
+                    {% else %}
+                    <div class="card bg-transparent text-center px-2 mx-5">
+                        <div class="car-body">
+                            <a class="nav-link">
+                                <span class="dot" style="background-color: {{ team.color }};"></span>
+                                <h4 class="text-light">{{ team.name }}</h4>
+                                <h4 class="text-light">{{ team.point_status }}</h4>
+                            </a>
+                        </div>
+                    </div>
+                    {% endif %}
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</nav>

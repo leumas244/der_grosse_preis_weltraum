@@ -1,0 +1,115 @@
+body {
+    font-family: "Ink Free";
+    user-select: None;
+}
+
+header {
+    position: relative;
+    background-color: black;
+    height: 100vh;
+    min-height: 25rem;
+    width: 100%;
+    overflow: hidden;
+}
+
+header video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 0;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+
+header .container {
+    position: relative;
+    z-index: 2;
+}
+
+header .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.5;
+    z-index: 1;
+}
+
+@media (pointer: coarse) and (hover: none) {
+    header {
+        background: url('https://source.unsplash.com/XT5OInaElMw/1600x900') black no-repeat center center scroll;
+    }
+
+    header video {
+        display: none;
+    }
+}
+
+td {
+    height: 100px;
+}
+
+.dot {
+    height: 25px;
+    width: 25px;
+    background-color: #bbb;
+    border-style: solid;
+    border-color: black;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.jungle-button {
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 25px 75px;
+    background-position: top;
+    background-size: 200px;
+    background-repeat: no-repeat;
+}
+
+.jungle-button:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.jungle-button-disabled {
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 25px 75px;
+    background-position: top;
+    background-size: 200px;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    user-select: None;
+}
+
+.jungle-button-disabled:hover {
+    color: black;
+    text-decoration: none;
+}
+
+.jungle-topic {
+    color: white;
+    text-align: center;
+    padding: 50px 75px;
+}
+
+.answer-picture {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    display: none;
+}
