@@ -15,11 +15,56 @@
 
 {% load static %}
 <h1 class="jungle-topic"
-    style="background:url('{% static 'base/images/HolzSchild_mit_Ranken.png' %}'); background-position: bottom; background-size: 350px; background-repeat: no-repeat;">
+    style="background:url('{% static 'base/images/space_banner.png' %}'); background-position: bottom; background-size: 400px; background-repeat: no-repeat;">
     {{ question.question_category }}</h1>
 {% if question.id == 1 %}
 <div class="mt-5" style="display: none" id="divQuestion">
     <h2>{{ question.name }}</h2>
+    <div class="row justify-content-md-center my-3">
+        <div class="col col-sm-4">
+            <div class="card bg-transparent text-center py-2" id="card-Kosmos">
+                <div class="car-body justify-content-md-center">
+                    <h4>
+                        <a style="text-decoration: none; color: white" href=""
+                           onclick="change_true('card-Kosmos'); return false; "><strong>A</strong>&#160 &#160 Kosmos</a>
+                    </h4>
+                </div>
+            </div>
+        </div>
+        <div class="col col-sm-4">
+            <div class="card bg-transparent text-center py-2" id="card-Taikonomie">
+                <div class="car-body">
+                    <h4>
+                        <a style="text-decoration: none; color: white" href=""
+                           onclick="change_false('card-Taikonomie'); return false"><strong>B</strong>&#160 &#160 Taikonomie</a>
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-md-center my-3">
+        <div class="col col-sm-4">
+            <div class="card bg-transparent text-center py-2" id="card-Astrologie">
+                <div class="car-body">
+                    <h4>
+                        <a style="text-decoration: none; color: white" href=""
+                           onclick="change_false('card-Astrologie'); return false"><strong>C</strong>&#160 &#160 Astrologie</a>
+                    </h4>
+                </div>
+            </div>
+        </div>
+        <div class="col col-sm-4">
+            <div class="card bg-transparent text-center py-2" id="card-Milchstraße">
+                <div class="car-body">
+                    <h4>
+                        <a style="text-decoration: none; color: white" href=""
+                           onclick="change_false('card-Milchstraße'); return false"><strong>D</strong>&#160 &#160 Milchstraße</a>
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--
     <div class="row justify-content-md-center my-3">
         <div class="col col-sm-4">
             <div class="card bg-transparent text-center py-2">
@@ -67,30 +112,28 @@
             </div>
         </div>
     </div>
+    -->
 </div>
-{% elif question.id == 5 %}
+{% elif question.id == 4 %}
 <div class="mt-5" style="display: none" id="divQuestion">
     <h2>{{ question.name }}</h2>
-    <audio id="audio_with_controls" controls src="{% static 'base/audio/Krokodil_Geraeusche.mp3' %}" type="audio/mp3">
-        hr Browser kann dieses Tondokument nicht wiedergeben.
-    </audio>
     <div class="row justify-content-md-center my-3">
         <div class="col col-sm-4">
-            <div class="card bg-transparent text-center py-2" id="cardBaer">
+            <div class="card bg-transparent text-center py-2" id="card-1952">
                 <div class="car-body justify-content-md-center">
                     <h4>
                         <a style="text-decoration: none; color: white" href=""
-                           onclick="change_false('cardBaer'); return false; "><strong>A</strong> Bär</a>
+                           onclick="change_false('card-1952'); return false; "><strong>A</strong>&#160 &#160 1952</a>
                     </h4>
                 </div>
             </div>
         </div>
         <div class="col col-sm-4">
-            <div class="card bg-transparent text-center py-2" id="cardKroko">
+            <div class="card bg-transparent text-center py-2" id="card-1969">
                 <div class="car-body">
                     <h4>
                         <a style="text-decoration: none; color: white" href=""
-                           onclick="change_true('cardKroko'); return false"><strong>B</strong> Krokodil</a>
+                           onclick="change_true('card-1969'); return false"><strong>B</strong>&#160 &#160 1969</a>
                     </h4>
                 </div>
             </div>
@@ -98,47 +141,47 @@
     </div>
     <div class="row justify-content-md-center my-3">
         <div class="col col-sm-4">
-            <div class="card bg-transparent text-center py-2" id="cardLion">
+            <div class="card bg-transparent text-center py-2" id="card-1975">
                 <div class="car-body">
                     <h4>
                         <a style="text-decoration: none; color: white" href=""
-                           onclick="change_false('cardLion'); return false"><strong>C</strong> Löwe</a>
+                           onclick="change_false('card-1975'); return false"><strong>C</strong>&#160 &#160 1975</a>
                     </h4>
                 </div>
             </div>
         </div>
         <div class="col col-sm-4">
-            <div class="card bg-transparent text-center py-2" id="cardTiger">
+            <div class="card bg-transparent text-center py-2" id="card-2001">
                 <div class="car-body">
                     <h4>
                         <a style="text-decoration: none; color: white" href=""
-                           onclick="change_false('cardTiger'); return false"><strong>D</strong> Tiger</a>
+                           onclick="change_false('card-2001'); return false"><strong>D</strong>&#160 &#160 2001</a>
                     </h4>
                 </div>
             </div>
         </div>
     </div>
 </div>
-{% elif question.id == 7 %}
+{% elif question.id == 6 %}
 <div class="mt-5" style="display: none" id="divQuestion">
     <h2>{{ question.name }}</h2>
     <div class="row justify-content-md-center my-3">
         <div class="col col-sm-4">
-            <div class="card bg-transparent text-center py-2" id="cardersteZahl">
+            <div class="card bg-transparent text-center py-2" id="card-3.6">
                 <div class="car-body justify-content-md-center">
                     <h4>
                         <a style="text-decoration: none; color: white" href=""
-                           onclick="change_false('cardersteZahl'); return false; "><strong>A</strong> 44</a>
+                           onclick="change_false('card-3.6'); return false; "><strong>A</strong>&#160 &#160 3</a>
                     </h4>
                 </div>
             </div>
         </div>
         <div class="col col-sm-4">
-            <div class="card bg-transparent text-center py-2" id="cardzweiteZahl">
+            <div class="card bg-transparent text-center py-2" id="card-4.6">
                 <div class="car-body">
                     <h4>
                         <a style="text-decoration: none; color: white" href=""
-                           onclick="change_false('cardzweiteZahl'); return false"><strong>B</strong> 55</a>
+                           onclick="change_true('card-4.6'); return false"><strong>B</strong>&#160 &#160 4</a>
                     </h4>
                 </div>
             </div>
@@ -146,100 +189,73 @@
     </div>
     <div class="row justify-content-md-center my-3">
         <div class="col col-sm-4">
-            <div class="card bg-transparent text-center py-2" id="carddritteZahl">
+            <div class="card bg-transparent text-center py-2" id="card-5.6">
                 <div class="car-body">
                     <h4>
                         <a style="text-decoration: none; color: white" href=""
-                           onclick="change_true('carddritteZahl'); return false"><strong>C</strong> 66</a>
+                           onclick="change_false('card-5.6'); return false"><strong>C</strong>&#160 &#160 5</a>
                     </h4>
                 </div>
             </div>
         </div>
         <div class="col col-sm-4">
-            <div class="card bg-transparent text-center py-2" id="cardvierteZahl">
+            <div class="card bg-transparent text-center py-2" id="card-6.6">
                 <div class="car-body">
                     <h4>
                         <a style="text-decoration: none; color: white" href=""
-                           onclick="change_false('cardvierteZahl'); return false"><strong>D</strong> 77</a>
+                           onclick="change_false('card-6.6'); return false"><strong>D</strong>&#160 &#160 6</a>
                     </h4>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-{% elif question.id == 9 %}
-<div class="mt-5" style="display: none" id="divQuestion">
-    <h2>{{ question.name }}</h2>
-    <div class="row justify-content-md-center my-3">
-        {% for team in teams %}
-        <div class="col">
-            <div class="card bg-transparent text-center py-2">
-                <div class="card-head justify-content-md-center">
-                    <span class="dot" style="background-color: {{ team.color }};"></span>
-                    <h4>{{ team.name }}</h4>
-                </div>
-                <div class="car-body justify-content-md-center">
-                    <h1 id="counter{{ team.id }}">0</h1>
-                    <button class="btn btn-outline-danger"
-                            onclick="javascipt:countminus('counter{{ team.id }}'); return false;">-
-                    </button>
-                    <button class="btn btn-outline-success"
-                            onclick="javascipt:countplus('counter{{ team.id }}'); return false;">+
-                    </button>
-                </div>
-            </div>
-        </div>
-        {% endfor %}
     </div>
 </div>
 {% elif question.id == 11 %}
 <div class="mt-5" style="display: none" id="divQuestion">
     <h2>{{ question.name }}</h2>
+    <audio id="audio_with_controls" controls src="{% static 'base/audio/kangaru.mp3' %}">
+        hr Browser kann dieses Tondokument nicht wiedergeben.
+    </audio>
     <div class="row justify-content-md-center my-3">
         <div class="col col-sm-4">
-            <div class="card bg-transparent text-center py-2" id="cardAlbanien">
+            <div class="card bg-transparent text-center py-2" id="card-Giraffe">
                 <div class="car-body justify-content-md-center">
                     <h4>
                         <a style="text-decoration: none; color: white" href=""
-                           onclick="javascipt:show('imgAlbanien'); return false;"><strong>A</strong> Albanien</a>
+                           onclick="change_false('card-Giraffe'); return false; "><strong>A</strong>&#160 &#160 Giraffe</a>
                     </h4>
-                    <img class="answer-picture" src="{% static 'base/images/flags/albanien.png' %}" id="imgAlbanien">
                 </div>
             </div>
         </div>
         <div class="col col-sm-4">
-            <div class="card bg-transparent text-center py-2" id="cardBelgien">
+            <div class="card bg-transparent text-center py-2" id="card-Löwe">
                 <div class="car-body">
                     <h4>
                         <a style="text-decoration: none; color: white" href=""
-                           onclick="change_true('cardBelgien'); show('imgBelgien'); return false"><strong>B</strong>
-                            Belgien</a>
+                           onclick="change_false('card-Löwe'); return false"><strong>B</strong>&#160 &#160 Löwe</a>
                     </h4>
-                    <img class="answer-picture" src="{% static 'base/images/flags/belgien.png' %}" id="imgBelgien">
                 </div>
             </div>
         </div>
     </div>
     <div class="row justify-content-md-center my-3">
         <div class="col col-sm-4">
-            <div class="card bg-transparent text-center py-2" id="cardCosta">
+            <div class="card bg-transparent text-center py-2" id="card-Kanguru">
                 <div class="car-body">
                     <h4>
                         <a style="text-decoration: none; color: white" href=""
-                           onclick="show('imgCosta'); return false"><strong>C</strong> Costa Rica</a>
+                           onclick="change_true('card-Kanguru'); return false"><strong>C</strong>&#160 &#160 Känguru</a>
                     </h4>
-                    <img class="answer-picture" src="{% static 'base/images/flags/costa_rica.png' %}" id="imgCosta">
                 </div>
             </div>
         </div>
         <div class="col col-sm-4">
-            <div class="card bg-transparent text-center py-2" id="cardDan">
+            <div class="card bg-transparent text-center py-2" id="card-Elefant">
                 <div class="car-body">
                     <h4>
                         <a style="text-decoration: none; color: white" href=""
-                           onclick="show('imgDan'); return false"><strong>D</strong> Dänemark</a>
+                           onclick="change_false('card-Elefant'); return false"><strong>D</strong>&#160 &#160 Elefant</a>
                     </h4>
-                    <img class="answer-picture" src="{% static 'base/images/flags/daenemark.png' %}" id="imgDan">
                 </div>
             </div>
         </div>
@@ -249,49 +265,70 @@
 <div class="mt-5" style="display: none" id="divQuestion">
     <h2>{{ question.name }}</h2>
     <div class="row justify-content-md-center my-3">
-        {% for team in teams %}
-        <div class="col">
-            <div class="card bg-transparent text-center py-2">
-                <div class="card-head justify-content-md-center">
-                    <span class="dot" style="background-color: {{ team.color }};"></span>
-                    <h4>{{ team.name }}</h4>
-                </div>
+        <div class="col col-sm-4">
+            <div class="card bg-transparent text-center py-2" id="card-Straus">
                 <div class="car-body justify-content-md-center">
-                    <h1 id="counter{{ team.id }}">0</h1>
-                    <button class="btn btn-outline-danger" onclick="countminus('counter{{ team.id }}'); return false;">
-                        -
-                    </button>
-                    <button class="btn btn-outline-success" onclick="countplus('counter{{ team.id }}'); return false;">
-                        +
-                    </button>
+                    <h4>
+                        <a style="text-decoration: none; color: white" href=""
+                           onclick="change_true('card-Straus'); return false; "><strong>A</strong>&#160 &#160 Strauß</a>
+                    </h4>
                 </div>
             </div>
         </div>
-        {% endfor %}
+        <div class="col col-sm-4">
+            <div class="card bg-transparent text-center py-2" id="card-Kaeenguru">
+                <div class="car-body">
+                    <h4>
+                        <a style="text-decoration: none; color: white" href=""
+                           onclick="change_false('card-Kaeenguru'); return false"><strong>B</strong>&#160 &#160 Känguru</a>
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-md-center my-3">
+        <div class="col col-sm-4">
+            <div class="card bg-transparent text-center py-2" id="card-Orangutan">
+                <div class="car-body">
+                    <h4>
+                        <a style="text-decoration: none; color: white" href=""
+                           onclick="change_false('card-Orangutan'); return false"><strong>C</strong>&#160 &#160 Orangutan</a>
+                    </h4>
+                </div>
+            </div>
+        </div>
+        <div class="col col-sm-4">
+            <div class="card bg-transparent text-center py-2" id="card-Pinguin">
+                <div class="car-body">
+                    <h4>
+                        <a style="text-decoration: none; color: white" href=""
+                           onclick="change_false('card-Pinguin'); return false"><strong>D</strong>&#160 &#160 Pinguin</a>
+                    </h4>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
-{% elif question.id == 14 %}
+{% elif question.id == 16 %}
 <div class="mt-5" style="display: none" id="divQuestion">
     <h2>{{ question.name }}</h2>
     <div class="row justify-content-md-center my-3">
         <div class="col col-sm-4">
-            <div class="card bg-transparent text-center py-2" id="cardFalse1">
+            <div class="card bg-transparent text-center py-2" id="card-1">
                 <div class="car-body justify-content-md-center">
                     <h4>
                         <a style="text-decoration: none; color: white" href=""
-                           onclick="javascipt:change_false('cardFalse1'); return false;"><strong>A</strong> 5000
-                            Erdbeeren</a>
+                           onclick="change_false('card-1'); return false; "><strong>A</strong>&#160 &#160 1</a>
                     </h4>
                 </div>
             </div>
         </div>
         <div class="col col-sm-4">
-            <div class="card bg-transparent text-center py-2" id="cardTrue">
+            <div class="card bg-transparent text-center py-2" id="card-2">
                 <div class="car-body">
                     <h4>
                         <a style="text-decoration: none; color: white" href=""
-                           onclick="change_true('cardTrue'); return false"><strong>B</strong> 2500
-                            Menschen</a>
+                           onclick="change_false('card-2'); return false"><strong>B</strong>&#160 &#160 2</a>
                     </h4>
                 </div>
             </div>
@@ -299,28 +336,28 @@
     </div>
     <div class="row justify-content-md-center my-3">
         <div class="col col-sm-4">
-            <div class="card bg-transparent text-center py-2" id="cardFalse2">
+            <div class="card bg-transparent text-center py-2" id="card-3">
                 <div class="car-body">
                     <h4>
                         <a style="text-decoration: none; color: white" href=""
-                           onclick="change_false('cardFalse2'); return false"><strong>C</strong> 20 Elefanten</a>
+                           onclick="change_false('card-3'); return false"><strong>C</strong>&#160 &#160 3</a>
                     </h4>
                 </div>
             </div>
         </div>
         <div class="col col-sm-4">
-            <div class="card bg-transparent text-center py-2" id="cardFalse3">
+            <div class="card bg-transparent text-center py-2" id="card-4">
                 <div class="car-body">
                     <h4>
                         <a style="text-decoration: none; color: white" href=""
-                           onclick="change_false('cardFalse3'); return false"><strong>D</strong> 1 Kleinwagen</a>
+                           onclick="change_true('card-4'); return false"><strong>D</strong>&#160 &#160 4</a>
                     </h4>
                 </div>
             </div>
         </div>
     </div>
 </div>
-{% elif question.id == 15 %}
+{% elif question.id == 20 %}
 <div class="mt-5" style="display: none" id="divQuestion">
     <h2>{{ question.name }}</h2>
     <div class="row justify-content-md-center my-3">
@@ -345,125 +382,26 @@
         {% endfor %}
     </div>
 </div>
-{% elif question.id == 16 %}
-<div class="mt-5" style="display: none" id="divQuestion">
-    <h2>{{ question.name }}</h2>
-    <div class="row justify-content-md-center my-3">
-        <div class="col col-sm-4">
-            <div class="card bg-transparent text-center py-2" id="cardFalse1">
-                <div class="car-body justify-content-md-center">
-                    <h4>
-                        <a style="text-decoration: none; color: white" href=""
-                           onclick="javascipt:change_false('cardFalse1'); return false;"><strong>A</strong> Tanzen</a>
-                    </h4>
-                </div>
-            </div>
-        </div>
-        <div class="col col-sm-4">
-            <div class="card bg-transparent text-center py-2" id="cardFalse2">
-                <div class="car-body">
-                    <h4>
-                        <a style="text-decoration: none; color: white" href=""
-                           onclick="change_false('cardFalse2'); return false"><strong>B</strong> Reisen</a>
-                    </h4>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row justify-content-md-center my-3">
-        <div class="col col-sm-4">
-            <div class="card bg-transparent text-center py-2" id="cardTrue">
-                <div class="car-body">
-                    <h4>
-                        <a style="text-decoration: none; color: white" href=""
-                           onclick="change_true('cardTrue'); return false"><strong>C</strong> Computer
-                            spielen</a>
-                    </h4>
-                </div>
-            </div>
-        </div>
-        <div class="col col-sm-4">
-            <div class="card bg-transparent text-center py-2" id="cardFalse3">
-                <div class="car-body">
-                    <h4>
-                        <a style="text-decoration: none; color: white" href=""
-                           onclick="change_false('cardFalse3'); return false"><strong>D</strong>
-                            Spazieren</a>
-                    </h4>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-{% elif question.id == 18 %}
-<div class="mt-5" style="display: none" id="divQuestion">
-    <h2>{{ question.name }}</h2>
-    <div class="row justify-content-md-center my-3">
-        <div class="col col-sm-4">
-            <div class="card bg-transparent text-center py-2" id="cardFalse1">
-                <div class="car-body justify-content-md-center">
-                    <h4>
-                        <a style="text-decoration: none; color: white" href=""
-                           onclick="javascipt:change_false('cardFalse1'); return false;"><strong>A</strong> Medizin</a>
-                    </h4>
-                </div>
-            </div>
-        </div>
-        <div class="col col-sm-4">
-            <div class="card bg-transparent text-center py-2" id="cardFalse2">
-                <div class="car-body">
-                    <h4>
-                        <a style="text-decoration: none; color: white" href=""
-                           onclick="change_false('cardFalse2'); return false"><strong>B</strong> Physik</a>
-                    </h4>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row justify-content-md-center my-3">
-        <div class="col col-sm-4">
-            <div class="card bg-transparent text-center py-2" id="cardFalse3">
-                <div class="car-body">
-                    <h4>
-                        <a style="text-decoration: none; color: white" href=""
-                           onclick="change_false('cardFalse3'); return false"><strong>C</strong> BWL</a>
-                    </h4>
-                </div>
-            </div>
-        </div>
-        <div class="col col-sm-4">
-            <div class="card bg-transparent text-center py-2" id="cardTrue">
-                <div class="car-body">
-                    <h4>
-                        <a style="text-decoration: none; color: white" href=""
-                           onclick="change_true('cardTrue'); return false"><strong>D</strong>
-                            Informationstechnik</a>
-                    </h4>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 {% elif question.id == 21 %}
 <div class="mt-5" style="display: none" id="divQuestion">
     <h2>{{ question.name }}</h2>
     <div class="row justify-content-md-center my-3">
         <div class="col col-sm-4">
-            <div class="card bg-transparent text-center py-2" id="cardFalse1">
+            <div class="card bg-transparent text-center py-2" id="card-45">
                 <div class="car-body justify-content-md-center">
                     <h4>
                         <a style="text-decoration: none; color: white" href=""
-                           onclick="javascipt:change_false('cardFalse1'); return false;"><strong>A</strong> 20g</a>
+                           onclick="javascipt:change_false('card-45'); return false;"><strong>A</strong>&#160 &#160 45</a>
                     </h4>
                 </div>
             </div>
         </div>
         <div class="col col-sm-4">
-            <div class="card bg-transparent text-center py-2" id="cardFalse2">
+            <div class="card bg-transparent text-center py-2" id="card-55">
                 <div class="car-body">
                     <h4>
                         <a style="text-decoration: none; color: white" href=""
-                           onclick="change_false('cardFalse2'); return false"><strong>B</strong> 35g</a>
+                           onclick="change_false('card-55'); return false"><strong>B</strong>&#160 &#160 55</a>
                     </h4>
                 </div>
             </div>
@@ -471,69 +409,21 @@
     </div>
     <div class="row justify-content-md-center my-3">
         <div class="col col-sm-4">
-            <div class="card bg-transparent text-center py-2" id="cardTrue">
+            <div class="card bg-transparent text-center py-2" id="card-65">
                 <div class="car-body">
                     <h4>
                         <a style="text-decoration: none; color: white" href=""
-                           onclick="change_true('cardTrue'); return false"><strong>C</strong> 60g</a>
+                           onclick="change_false('card-65'); return false"><strong>C</strong>&#160 &#160 65</a>
                     </h4>
                 </div>
             </div>
         </div>
         <div class="col col-sm-4">
-            <div class="card bg-transparent text-center py-2" id="cardFalse3">
+            <div class="card bg-transparent text-center py-2" id="card-75">
                 <div class="car-body">
                     <h4>
                         <a style="text-decoration: none; color: white" href=""
-                           onclick="change_false('cardFalse3'); return false"><strong>D</strong> 95g</a>
-                    </h4>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-{% elif question.id == 22 %}
-<div class="mt-5" style="display: none" id="divQuestion">
-    <h2>{{ question.name }}</h2>
-    <div class="row justify-content-md-center my-3">
-        <div class="col col-sm-4">
-            <div class="card bg-transparent text-center py-2" id="cardFalse1">
-                <div class="car-body justify-content-md-center">
-                    <h4>
-                        <a style="text-decoration: none; color: white" href=""
-                           onclick="javascipt:change_false('cardFalse1'); return false;"><strong>A</strong> 1</a>
-                    </h4>
-                </div>
-            </div>
-        </div>
-        <div class="col col-sm-4">
-            <div class="card bg-transparent text-center py-2" id="cardFalse2">
-                <div class="car-body">
-                    <h4>
-                        <a style="text-decoration: none; color: white" href=""
-                           onclick="change_false('cardFalse2'); return false"><strong>B</strong> 5</a>
-                    </h4>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row justify-content-md-center my-3">
-        <div class="col col-sm-4">
-            <div class="card bg-transparent text-center py-2" id="cardFalse3">
-                <div class="car-body">
-                    <h4>
-                        <a style="text-decoration: none; color: white" href=""
-                           onclick="change_false('cardFalse3'); return false"><strong>C</strong> 10</a>
-                    </h4>
-                </div>
-            </div>
-        </div>
-        <div class="col col-sm-4">
-            <div class="card bg-transparent text-center py-2" id="cardTrue">
-                <div class="car-body">
-                    <h4>
-                        <a style="text-decoration: none; color: white" href=""
-                           onclick="change_true('cardTrue'); return false"><strong>D</strong> 20</a>
+                           onclick="change_true('card-75'); return false"><strong>D</strong>&#160 &#160 75</a>
                     </h4>
                 </div>
             </div>
@@ -556,14 +446,14 @@
         <div class="text-center p-3">
             <form method="POST">
                 {% csrf_token %}
-                <a class="btn btn-secondary" href="{% url 'home' %}">Zurück</a>
+                <a class="btn btn-secondary" href="{% url 'home' %}">Zurueck</a>
                 {% for team in teams %}
                 <button type="submit" name="{{ team.id }}" value="{{ id_number }}" class="btn"
-                        style="background-color: {{ team.color }}">Punkte für {{ team.name }}
+                        style="background-color: {{ team.color }}">Punkte fuer {{ team.name }}
                 </button>
                 {% endfor %}
                 <button type="submit" name="0" value="{{ id_number }}" class="btn btn-secondary">
-                    Punkte für keinen
+                    Punkte fuer keinen
                 </button>
             </form>
         </div>

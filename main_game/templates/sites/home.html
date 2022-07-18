@@ -24,13 +24,13 @@
             {% if entry.state %}
             <td>
                 <a class="jungle-button" href="{% url 'question_by_id' entry.id %}"
-                   style="background:url('{% static 'base/images/HolzSchild_mit_Ranken.png' %}'); background-position: bottom; background-size:150px; background-repeat: no-repeat; text-align: center;">
+                   style="background:url('{% static 'base/images/space_banner.png' %}'); background-position: bottom; background-size:200px; background-repeat: no-repeat; text-align: center;">
                     {{ entry.question_points }}</a>
             </td>
             {% else %}
             <td>
                 <a class="jungle-button-disabled" href=""
-                   style="background:url('{% static 'base/images/HolzSchild_mit_Ranken.png' %}'); background-position: bottom; background-size:150px; background-repeat: no-repeat; text-align: center;"
+                   style="background:url('{% static 'base/images/space_banner.png' %}'); background-position: bottom; background-size:200px; background-repeat: no-repeat; text-align: center;"
                    disabled="true">
                     {{ entry.question_points }}</a>
             </td>

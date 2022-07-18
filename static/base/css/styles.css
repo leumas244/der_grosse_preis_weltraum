@@ -1,5 +1,10 @@
 body {
-    font-family: "Ink Free";
+    /* fonts:
+    Nasalization RG
+    font-family: "Space Mission";
+    font-family: "Edge of the Galaxy";
+    */
+    font-family: "Nasalization RG";
     user-select: None;
 }
 
@@ -75,8 +80,7 @@ td {
     padding: 25px 75px;
     background-position: top;
     background-size: 200px;
-    background-repeat: no-repeat;
-}
+    background-repeat: no-repeat;}
 
 .jungle-button:hover {
     color: white;
@@ -84,7 +88,7 @@ td {
 }
 
 .jungle-button-disabled {
-    color: black;
+    color: red;
     text-align: center;
     text-decoration: none;
     font-size: 20px;
@@ -97,7 +101,7 @@ td {
 }
 
 .jungle-button-disabled:hover {
-    color: black;
+    color: red;
     text-decoration: none;
 }
 
