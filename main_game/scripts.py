@@ -2,7 +2,7 @@ from .models import *
 
 
 def next_team_change():
-    sequence = [1, 2, 3, 4]
+    sequence = [1, 2, 3, 4, 5]
     active_team = Team.objects.get(id=1)
 
     teams = Team.objects.all()

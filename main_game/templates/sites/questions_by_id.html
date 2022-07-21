@@ -64,55 +64,6 @@
             </div>
         </div>
     </div>
-    <!--
-    <div class="row justify-content-md-center my-3">
-        <div class="col col-sm-4">
-            <div class="card bg-transparent text-center py-2">
-                <div class="car-body justify-content-md-center">
-                    <h4>
-                        <a style="text-decoration: none; color: white" href=""
-                           onclick="show('divGuerteltier'); return false"><strong>A</strong> Gürteltier</a>
-                    </h4>
-                    <img class="answer-picture" src="{% static 'base/images/guerteltier.jpg' %}" id="divGuerteltier">
-                </div>
-            </div>
-        </div>
-        <div class="col col-sm-4">
-            <div class="card bg-transparent text-center py-2">
-                <div class="car-body">
-                    <h4>
-                        <a style="text-decoration: none; color: white" href=""
-                           onclick="show('divNilflughund'); return false"><strong>B</strong> Nilflughund</a>
-                    </h4>
-                    <img class="answer-picture" src="{% static 'base/images/nilflughund.jpg' %}" id="divNilflughund">
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row justify-content-md-center my-3">
-        <div class="col col-sm-4">
-            <div class="card bg-transparent text-center py-2">
-                <div class="car-body">
-                    <h4>
-                        <a style="text-decoration: none; color: white" href=""
-                           onclick="show('divGlasfrosch'); return false"><strong>C</strong> Glasfrosch</a>
-                    </h4>
-                    <img class="answer-picture" src="{% static 'base/images/glasfrosch.jpg' %}" id="divGlasfrosch">
-                </div>
-            </div>
-        </div>
-        <div class="col col-sm-4">
-            <div class="card bg-transparent text-center py-2" id="rightCard">
-                <div class="car-body">
-                    <h4>
-                        <a style="text-decoration: none; color: white" href=""
-                           onclick="change_true('rightCard'); return false"><strong>D</strong> Rotmaulpapagai</a>
-                    </h4>
-                </div>
-            </div>
-        </div>
-    </div>
-    -->
 </div>
 {% elif question.id == 4 %}
 <div class="mt-5" style="display: none" id="divQuestion">
@@ -208,6 +159,31 @@
                 </div>
             </div>
         </div>
+    </div>
+</div>
+{% elif question.id == 10 %}
+<div class="mt-5" style="display: none" id="divQuestion">
+    <h2>{{ question.name }}</h2>
+    <div class="row justify-content-md-center my-3">
+        {% for team in teams %}
+        <div class="col">
+            <div class="card bg-transparent text-center py-2">
+                <div class="card-head justify-content-md-center">
+                    <span class="dot" style="background-color: {{ team.color }};"></span>
+                    <h4>{{ team.name }}</h4>
+                </div>
+                <div class="car-body justify-content-md-center">
+                    <h1 id="counter{{ team.id }}">0</h1>
+                    <button class="btn btn-outline-danger"
+                            onclick="javascipt:countminus('counter{{ team.id }}'); return false;">-
+                    </button>
+                    <button class="btn btn-outline-success"
+                            onclick="javascipt:countplus('counter{{ team.id }}'); return false;">+
+                    </button>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
     </div>
 </div>
 {% elif question.id == 11 %}
@@ -446,14 +422,14 @@
         <div class="text-center p-3">
             <form method="POST">
                 {% csrf_token %}
-                <a class="btn btn-secondary" href="{% url 'home' %}">Zurueck</a>
+                <a class="btn btn-secondary" href="{% url 'home' %}">Zurück</a>
                 {% for team in teams %}
                 <button type="submit" name="{{ team.id }}" value="{{ id_number }}" class="btn"
-                        style="background-color: {{ team.color }}">Punkte fuer {{ team.name }}
+                        style="background-color: {{ team.color }}">Punkte für {{ team.name }}
                 </button>
                 {% endfor %}
                 <button type="submit" name="0" value="{{ id_number }}" class="btn btn-secondary">
-                    Punkte fuer keinen
+                    Punkte für keinen
                 </button>
             </form>
         </div>
